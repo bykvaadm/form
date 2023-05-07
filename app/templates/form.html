@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>grid trading</title>
+    <meta charset="utf-8"/>
+</head>
+<body>
+<h3>
+    <form method="post" action="/calculategrid">
+        <p> Выберите пару:
+            <select name="pare" size="1">
+                <option>DASHUSDT</option>
+                <option>TRaXUSDT</option>
+                <option>XMRUSDT</option>
+            </select></p>
+        <p>Диаппазон от: <input type="text" size="6" name="startrange"/></p>
+        <p>Диаппазон до: <input type="text" size="6" name="endrange"/></p>
+        <p>Количество уровней: <input type="text" size="6" name="quantitylevels"/></p>
+        <input type="submit" name="calculategrid" value="Рассчитать сетку">
+    </form>
+    <br><br>
+    <form method="post" action="/rungrid">
+        <p>Напрвление торговли: <br>
+            <input type="checkbox" name="ch_long"/>LONG
+            <input type="checkbox" name="ch_short"/>SHORT</p>
+        <p>Депозит на один уровень: <input type="text" size="6" name="deposit"/></p>
+        <p>Плечо: <input type="text" size="6" name="shoulder"/></p>
+        <p>Фиксация % (0-без фиксации): <input type="text" size="6" name="fixation"/></p>
+        <p>Индикатор: <br>
+            <input type="radio" name="indicator" value="ema"/>EMA
+            <input type="radio" name="indicator" value="macd"/>MACD </p>
+        <br>
+        <input type="submit" name="rungrid" value="Запустить сетку">
+    </form>
+    <!--<input type="submit" name="stopgrid" value="Остановить сетку">-->
+</h3>
+
+</body>
+</html>
